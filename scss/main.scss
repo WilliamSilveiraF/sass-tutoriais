@@ -1,8 +1,9 @@
 @import 'config';
+@import 'home';
 
 body {
     background-color: $primary-color;
-    color: #fff;
+    color: set-text-color($primary-color);
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1;
@@ -11,7 +12,7 @@ h1, h2, h3 {
     font-weight: 400;
 }
 a {
-    color: #fff;
+    color: set-text-color($primary-color);
     text-decoration: none;
 }
 header {
@@ -30,10 +31,20 @@ main {
         left: 1rem;
         a {
             padding: 0.4rem;
+            @include transtion-ease;
 
             &:hover {
                 color: $secondary-color;
             }
         }
     }
+}
+footer {
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0.4rem;
+    right: 1rem;
+    text-align: right;
+    padding: 1rem;
+    color: set-text-color($primary-color);
 }
