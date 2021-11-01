@@ -6,7 +6,7 @@
     height: 20px;
     width: 28px;
     cursor: pointer;
-    @include transtion-ease;
+    @include transition-ease;
 
     &__burger {
         position: absolute;
@@ -15,7 +15,7 @@
         width: 28px;
         height: 3px;
         background: set-text-color($primary-color);
-        @include transtion-ease;
+        @include transition-ease;
 
         &::before {
             content: '';
@@ -24,7 +24,7 @@
             width: 28px;
             height: 3px;
             background: set-text-color($primary-color);
-            @include transtion-ease;
+            @include transition-ease;
         }
         &::after {
             content: '';
@@ -33,7 +33,7 @@
             width: 20px;
             height: 3px;
             background: set-text-color($primary-color);
-            @include transtion-ease;
+            @include transition-ease;
         }
 
         &.open {
@@ -73,7 +73,7 @@
         list-style-type: none;
         padding-right: 1rem;
         transform: translateY(-100%);
-        @include transtion-ease;
+        @include transition-ease;
 
         &.open {
             transform: translateY(0);
@@ -81,7 +81,7 @@
 
         &__item {
             transform: translateX(100vw);
-            @include transtion-ease;
+            @include transition-ease;
 
             &.open {
                 transform: translateX(0);
@@ -97,10 +97,17 @@
             padding: 2rem 0;
             font-weight: 300;
             @include transition-ease;
-
+        
             &:hover {
                 color: $secondary-color;
             }
         }
     }
+}
+
+@for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.15s;
+    }
+
 }
